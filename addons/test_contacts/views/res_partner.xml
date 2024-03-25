@@ -8,6 +8,16 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='internal_notes']" position="after">
                 <page name="extra_information" string="Información Extra">
+                    <!-- 
+                        A continuación se agregan los atributos añadidos al modelo res.partner
+                        Estos se mostraran en una pestaña con el nombre de Información Extra en 
+                        la vista de los contactos. 
+                    -->
+                    <group>
+                        <field name="x_coordinate"/>
+                        <field name="y_coordinate"/>
+                        <field name="gender"/>
+                    </group>
                 </page>
             </xpath>
         </field>

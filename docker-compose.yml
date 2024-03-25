@@ -10,7 +10,7 @@ services:
     ports:
       - 8069:8069
       - 8888:8888
-    command: sh -c "python3 -m debugpy --listen 0.0.0.0:8888 /usr/bin/odoo -i base" #poner -i base para inicializar base de datos al final del command, luego quitar
+    command: sh -c "python3 -m debugpy --listen 0.0.0.0:8888 /usr/bin/odoo --update=test_contacts" #poner -i base para inicializar base de datos al final del command, luego quitar
     expose:
       - 8069
     volumes:
@@ -36,4 +36,4 @@ services:
       - '5435:5432'
 networks:
   test-network:
-    external: true
+    # external: true

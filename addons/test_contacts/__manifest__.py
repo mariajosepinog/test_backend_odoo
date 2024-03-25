@@ -15,8 +15,10 @@
         "component",
         "contacts",
     ],
+    # Se agregan tanto los cambios a la vista como los archivos de ejemplo
     'data': [
-        
+        'data/res_partner.xml',
+        'views/res_partner.xml'
     ],
     'installable': True,
     'application': True,
