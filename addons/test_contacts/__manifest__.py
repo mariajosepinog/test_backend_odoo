@@ -4,8 +4,8 @@
 
 {
     'name': 'Test Contacts',
-    'version': '12.0.0.0.0',
-    'license': 'AGPL-3',
+    'version': '16.0.0.0.0',
+    'license': 'OPL-1',
     'summary': 'Test Contacts',
     'author': 'Desarrollo CCU S.A.',
     'website': '',
@@ -16,8 +16,10 @@
         "contacts",
     ],
     'data': [
+        'views/res_partner.xml',
         
     ],
+    'demo': ['demo/demo.xml'],
     'installable': True,
     'application': True,
     'auto_install': False,

@@ -6,9 +6,12 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='internal_notes']" position="after">
-                <page name="extra_information" string="Información Extra">
-                </page>
+        <!-- Atraves de la herencia de vistas xpath uso como referencia el field website de la vista form para ubicar 
+        los nuevos fields -->
+            <xpath expr="//field[@name='website']" position="after">
+                <field name="x_coordinate" string="X Cordinate" />
+                <field name="y_coordinate" string="Y Cordiante" />
+                <field name="gender" string="Gender" />
             </xpath>
         </field>
     </record>
