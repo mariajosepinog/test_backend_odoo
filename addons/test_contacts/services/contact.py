@@ -19,5 +19,36 @@ class Account(Component):
                     Endpoints available:
                     * ``GET /restapi/public/contact/close_contact``: get close contacts sorted
                     """
-    
-
+    # Definicion de método GET y respectivos parametros
+    @restapi.method(
+        [(["/<int:x_coordinate>/<int:y_coordinate>"], "GET")],
+        auth="public",
+    )
+    # Creación de función para retornar usuarios que cumplan con max_distance
+    def searchByCoordinate(self, x_coordinate,y_coordinate):
+        try:
+            partner_list = []
+            
+            partner_dict = {}
+            
+            max_distance = x_coordinate + y_coordinate
+            
+            partners = self.env["res.partner"].search([])
+            
+            for i in partners:
+                if i.x_coordinate + i.y_coordinate == max_distance:
+                    partner_dict = {
+                        "name": i.name
+                    }
+                    partner_list.append(partner_dict)
+            return{
+            "Success":True,
+            "error":"No existe error",
+            "data": partner_list
+            }
+        except Exception as e:
+            return{
+            "Success":False,
+            "error":e,
+            "data": []
+            }

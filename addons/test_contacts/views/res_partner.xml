@@ -12,4 +12,43 @@
             </xpath>
         </field>
     </record>
+
+    <!-- DEFINICIÓN DE NUEVAS VARIABLES -->
+
+
+    <!-- DEFINICIÓN DE COORDENADA X -->
+    <record id="res_partner_x" model="ir.ui.view">
+        <field name="name">res.partner.x</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[2]/field[@name='category_id']" position="after">
+                <field name="x_coordinate"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- DEFINICIÓN DE VARIABLE Y -->
+    <record id="y_partner_test" model="ir.ui.view">
+        <field name="name">res.partner.y</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[2]/field[@name='x_coordinate']" position="after">
+                <field name="y_coordinate"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- DEFINICIÓN DE VARIABLE GENERO -->
+    <record id="gender_partner_test" model="ir.ui.view">
+        <field name="name">res.partner.gender</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[2]/field[@name='y_coordinate']" position="after">
+                <field name="gender" widget="radio" options="{'horizontal': true}"/>
+            </xpath>
+        </field>
+    </record> 
 </odoo>

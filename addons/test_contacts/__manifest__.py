@@ -16,7 +16,9 @@
         "contacts",
     ],
     'data': [
-        
+        # En data se agregan los PATH específicos de los cuales se extraerá la información
+        'data/res_partner.xml',
+        'views/res_partner.xml'
     ],
     'installable': True,
     'application': True,
